@@ -1,0 +1,9 @@
+{
+    "target": "esp32s3",
+    "builds": [
+        {
+            "name": "esp-aispeaker-k08",
+            "sdkconfig_append": []
+        }
+    ]
+}

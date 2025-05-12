@@ -1,0 +1,67 @@
+#ifndef _BOARD_CONFIG_H_
+#define _BOARD_CONFIG_H_
+
+#include <driver/gpio.h>
+
+#define AUDIO_INPUT_SAMPLE_RATE  16000
+#define AUDIO_OUTPUT_SAMPLE_RATE 24000
+
+// 麦克风
+#define AUDIO_I2S_MIC_GPIO_WS   GPIO_NUM_11
+#define AUDIO_I2S_MIC_GPIO_SCK  GPIO_NUM_13
+#define AUDIO_I2S_MIC_GPIO_DIN  GPIO_NUM_12
+
+// 音频
+#define AUDIO_I2S_SPK_GPIO_DOUT GPIO_NUM_18
+#define AUDIO_I2S_SPK_GPIO_BCLK GPIO_NUM_17
+#define AUDIO_I2S_SPK_GPIO_LRCK GPIO_NUM_16
+
+// 背光灯
+#define BUILTIN_LED_GPIO        GPIO_NUM_48
+#define BUILTIN_LED_NUM         4
+
+// 按钮
+// #define BOOT_BUTTON_GPIO        GPIO_NUM_1
+#define MENU_BUTTON_GPIO        GPIO_NUM_9
+#define TOUCH_BUTTON_GPIO       GPIO_NUM_NC
+#define VOLUME_UP_BUTTON_GPIO   GPIO_NUM_14
+#define VOLUME_DOWN_BUTTON_GPIO GPIO_NUM_46
+
+// 电量与低功耗
+#define BATTERY_ADC_GPIO        GPIO_NUM_1
+#define ESP_RTC_GPIO            GPIO_NUM_9
+
+// 屏幕
+#define DISPLAY_BACKLIGHT_PIN GPIO_NUM_4
+#define DISPLAY_MOSI_PIN      GPIO_NUM_7
+#define DISPLAY_CLK_PIN       GPIO_NUM_15
+#define DISPLAY_DC_PIN        GPIO_NUM_5
+#define DISPLAY_RST_PIN       GPIO_NUM_6
+#define DISPLAY_CS_PIN        GPIO_NUM_NC
+
+// 屏幕参数
+#define LCD_TYPE_ST7789_SERIAL
+#define DISPLAY_WIDTH   240
+#define DISPLAY_HEIGHT  240
+#define DISPLAY_MIRROR_X false
+#define DISPLAY_MIRROR_Y true
+#define DISPLAY_SWAP_XY true
+#define DISPLAY_INVERT_COLOR    true
+#define DISPLAY_RGB_ORDER  LCD_RGB_ELEMENT_ORDER_RGB
+#define DISPLAY_OFFSET_X  80
+#define DISPLAY_OFFSET_Y  0
+#define DISPLAY_BACKLIGHT_OUTPUT_INVERT false
+// this' the driver version likes st7789v3 
+#define DISPLAY_SPI_MODE 3
+
+
+// 电池管理相关
+// Power voltage ratio
+#define POWER_VOLTAGE_RATIO             2.0f
+#define POWER_VOLT_FULL     (4.2 * 1000)
+#define POWER_VOLT_EMPTY    (3.1 * 1000)
+#define VOLT_FILTER_ALPHA   0.1f
+
+#define POWER_ADC_CHANNEL ADC_CHANNEL_0
+
+#endif // _BOARD_CONFIG_H_
